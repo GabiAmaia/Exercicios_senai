@@ -16,9 +16,7 @@ dias = float(input('Por quantos dias o carro foi alugado? '))
 km_carro = float(input('Digite a quantidade de km percorridos: '))
 valor_dias = (dias * 60)
 valor_km = (km_carro * 0.15)
-valor_total = (valor_dias + valor_dias) 
-
-valor_dia = 80
+valor_total = (valor_dias + valor_km) 
 
 carro = input('Digite o modelo do carro: ')
 if carro == 'Uno':
