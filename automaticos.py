@@ -1,0 +1,31 @@
+import pyautogui as pag
+from time import sleep
+
+#pag.mouseInfo()
+
+pag.press('win')
+pag.write('chrome')
+pag.press('enter')
+pag.moveTo(247,102)
+sleep(0.5)
+pag.click()
+sleep(0.5)
+pag.write('www.youtube.com.br')
+pag.press('enter')
+sleep(1)
+pag.moveTo(698,165)
+pag.click()
+pag.write("Lana Del Rey-Young and beautiful")
+pag.press('enter')
+# pag.moveTo(732,680,duration=5)
+# pag.click()
+# sleep(2)
+# pag.moveTo(806,224)
+# pag.click()
+# pag.write("Milton Nascimento Tudo Oque Voce Podia Ser")
+# pag.press('enter')
+# pag.moveTo(758,478)
+# pag.click()
+# sleep(2)
+pag.alert('fim')
+
