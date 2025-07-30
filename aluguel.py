@@ -1,34 +1,43 @@
-# Aluguel de carros:
+import streamlit as st 
+#------------------------------------ SIDEBAR
+st.sidebar.image('movida_logo.png')
+st.sidebar.title('Movida - Aluguel de carros')
+st.sidebar.write('Seja bem vindo (a)')
 
-# Escreva um programa que pergunte a quantidade de Km percorridos por um carro alugado e a quantidade de dias pelos quais ele foi alugado
+carros = ['BMW', 'MUSTANG', 'HB20', 'FUSCA', 'CIVIC']
+carro = st.sidebar.selectbox('Selecione um carro', carros)
+valor_do_dia = 0
 
-# Calcule o preço a pagar, sabendo que o carro custa R$ 60 por dia e R$ 0.15 por km rodado
+if carro == 'BMW':
+    valor_do_dia = 200
 
+elif carro == 'MUSTANG':
+    valor_do_dia = 500
 
-#1 - (dias) Pedir a quantidade de dias
-#2 - (km) Pedir a quantidade de km percorridos
-#3 - (valor_dias) Calcular o valor total dos dias (dias * 60)
-#4 - (valor_km) Calcular o valor total da quilometragem (km * 0.15)
-# 5 - (valor_total) Calcular o valor total somando o valor dos dias + o valor dos km
-# 6 - Mostrar na tela a frase formatada
+elif carro == 'HB20':
+    valor_do_dia = 150
 
-dias = float(input('Por quantos dias o carro foi alugado? '))
-km_carro = float(input('Digite a quantidade de km percorridos: '))
-valor_dias = (dias * 60)
-valor_km = (km_carro * 0.15)
-valor_total = (valor_dias + valor_km) 
+elif carro == 'FUSCA':
+    valor_do_dia = 300
 
-carro = input('Digite o modelo do carro: ')
-if carro == 'Uno':
-    valor_dia = 40
-
-elif carro == 'Celta':
-    valor_dia = 100
-
-elif carro == 'Corsa':
-    valor_dia = 60
-
+elif carro == 'CIVIC':
+    valor_do_dia = 200
+    
 else:
-    valor_dia = 50
+    valor_do_dia = 60
 
-print(f'Você andou {km_carro} km por {dias} dias, então o preço a pagar é R$ {valor_total}.')
+#------------------------------------ PRINCIPAL
+st.title('Movida - Aluguel de carros')
+st.write('Seja bem vindo(a)')
+st.image(f'{carro}.png')
+
+dias = st.text_input('Informe a quantidade de dias')
+km = st.text_input('Informe a quantidade de kilometros percorridos')
+if st.button('Calcular'):
+    dias - int(dias)
+    km = float(km)
+    valor_dias = dias*valor_do_dia
+    valor_km = km*0.15
+    total = valor_do_dia+valor_dias
+
+st.warning(f'Você rodou {km}km por {dias} dias. O valor total a pagar será {total}.')
